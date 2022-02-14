@@ -1,0 +1,31 @@
+1. Seleziono studenti nati nel '90
+
+SELECT * FROM `students` WHERE YEAR(`date_of_birth`) = '1990'
+
+2. Selezionare corsi che valgono più di 10 crediti
+
+SELECT * FROM `courses` WHERE `cfu` >= '10'
+
+3. Seleziono studenti con più di 30 anni
+
+SELECT * FROM `students` WHERE YEAR(CURDATE()) - YEAR(`date_of_birth`) > 30
+
+4. Seleziono i corsi del primo semestre del primo anno di un quasiasi corso di laurea
+
+SELECT * FROM `courses` WHERE `period` = 'I Semestre' AND `year` = '1'
+
+5. Seleziono gli appelli d'esame che avvengono dopo le 14 del 20/06/2020
+
+SELECT * FROM `exams` WHERE `hour` > '14:00:00' AND `date` = '2020/06/20'
+
+6. Seleziono tutti i corsi di laurea magistrale
+
+SELECT * FROM `degrees` WHERE `level` = 'magistrale'
+
+7. Dipartimenti da cui è composta l'università
+
+SELECT COUNT(`id`) FROM `departments`
+
+8. Quanti insegnanti non hanno un numero di telefono?
+SELECT COUNT(`id`)* FROM `teachers` WHERE `phone` IS NULL
+
